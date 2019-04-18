@@ -49,7 +49,7 @@ This header only works when PUTting to IAS3.
 
 #### x-archive-keep-old-version
 
-Normal PUT operation will overwrite a file when it is used to upload a file of the same name. A normal DELETE operation will remove the specified file. The `x-archive-keep-old-version` header will rename the specified file, prepending the filename with `.~~` before proceding with the PUT or DELETE operation.
+Normal PUT operation will overwrite a file when it is used to upload a file of the same name. A normal DELETE operation will remove the specified file. The `x-archive-keep-old-version` header will rename the specified file, prepending the filename with `.~~` before proceeding with the PUT or DELETE operation.
 
 To enable this option, pass the `x-archive-keep-old-version` header with a value of `1`. 
 
@@ -84,6 +84,12 @@ To enable this option, pass the `x-archive-size-hint` header with a value of the
 If this header is not defined IAS3 will attempt to default to the value in the `content-length` header.
 
 This header works only when PUTting to IAS3.
+
+Navigation
+
+* [< Anatomy of an IAS3 Request](https://github.com/vmbrasseur/IAS3API/blob/master/requestanatomy.md)
+* [Table of Contents](https://github.com/vmbrasseur/IAS3API)
+* [> Metadata](https://github.com/vmbrasseur/IAS3API/blob/master/metadata.md)
 
 -----
 

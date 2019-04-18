@@ -2,7 +2,7 @@
 
 Each Internet Archive item is comprised of several files. Many of these files are automatically generated and **should not** be either removed or modified.
 
-### IDENTIFIER.meta.xml
+### IDENTIFIER_meta.xml
 
 `IDENTIFIER_meta.xml` is the definitive metadata file for the item. It is automatically generated at item creation time using the metadata provided either [via headers](./metadata.md) or [via files](./metadatafiles.md).
 
@@ -70,6 +70,12 @@ A new or modified `IDENTIFIER_rules.conf` file will not be recognized until a ne
  1. Click the "derive" button
 
 If now-excluded formats had previously been derived, initiating a derive process will remove the files from the item.
+
+Navigation
+
+* [< Setting Metadata Values via Files](https://github.com/vmbrasseur/IAS3API/blob/master/metadatafiles.md)
+* [Table of Contents](https://github.com/vmbrasseur/IAS3API)
+* [> A note on downloading](https://github.com/vmbrasseur/IAS3API/blob/master/downloading.md)
 
 -----
 

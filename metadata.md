@@ -38,6 +38,16 @@ For example, if an item contains both PDF and mp3 files you may assign it to bot
     --header 'x-archive-meta01-collection:texts' 
     --header 'x-archive-meta02-collection:opensource_audio'
 
+### Unicode Metadata Values
+
+`x-archive-meta-*` headers are interpreted as having utf-8 character encoding, however some http clients do not allow the full range of utf-8 bytes to appear in http headers.
+As a work around, one can encode a utf-8 meta header with uri encoding.
+To do this write all the header data like so: `uri($payload_as_uri_encoded_utf8)`
+
+For example, to set the title of an item to include the unicode snowman include the following line in a curl command:
+
+    --header 'x-archive-meta-title:uri(This%20is%20a%20snowman%20%E2%98%83)'
+
 ### Standard Internet Archive Metadata Fields
 
 There are several standard metadata fields recognized for Internet Archive items. All metadata fields are optional.
@@ -64,9 +74,9 @@ While is is possible to set the `adder` metadata value it is not recommended. Th
 
 #### collection
 
-A collection is a specialized item used for curation and aggregation of other items. Assigning an item to a collection defines where the item may be located by a user browsing Internet Archive. To assign an item to a collection, pass its identifier as the value for an `x-archive-metadata-collection` header. For example, if you are using curl you can assign an item to the _Community Texts_ collection (identifier: _opensource_) with the following header:
+A collection is a specialized item used for curation and aggregation of other items. Assigning an item to a collection defines where the item may be located by a user browsing Internet Archive. To assign an item to a collection, pass its identifier as the value for an `x-archive-meta-collection` header. For example, if you are using curl you can assign an item to the _Community Texts_ collection (identifier: _opensource_) with the following header:
 
-    --header 'x-archive-metadata-collection:opensource'
+    --header 'x-archive-meta-collection:opensource'
 
 A collection **must** exist prior to assigning any items to it. Currently collections can only be created by Internet Archive staff members. Please [contact Internet Archive](mailto:info@archive.org?subject=[Collection Creation Request]) if you need a collection created.
 
@@ -219,6 +229,12 @@ Internet Archive strives to be metadata agnostic, enabling users to define the m
     x-archive-meta-isbn--10:080652510X
 
 This example will generate a metadata field named `isbn_10`.
+
+Navigation
+
+* [< Headers](https://github.com/vmbrasseur/IAS3API/blob/master/headers.md)
+* [Table of Contents](https://github.com/vmbrasseur/IAS3API)
+* [> Setting Metadata Values via Files](https://github.com/vmbrasseur/IAS3API/blob/master/metadatafiles.md)
 
 -----
 
